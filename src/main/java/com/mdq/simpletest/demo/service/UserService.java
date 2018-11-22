@@ -12,4 +12,7 @@ public interface UserService {
 
     public List<User> selectByName(String name);
 
+    public int insertUser(User user);
+
+
 }

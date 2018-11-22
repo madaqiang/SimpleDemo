@@ -30,4 +30,12 @@ public class User {
                       ", age=" + age
               ;
      }
+
+    public User() {
+    }
+
+    public User(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 }

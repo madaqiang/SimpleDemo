@@ -1,6 +1,7 @@
 package com.mdq.simpletest.demo.mapper;
 
 import com.mdq.simpletest.demo.model.User;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -16,4 +17,7 @@ public interface UserMapper {
     List<User> selectAll();
 
     List<User> selectByName(String name);
+
+    @Insert({"insert into user(name,age) values(#{name},#{age})"})
+    public int insertUser(User user);
 }
