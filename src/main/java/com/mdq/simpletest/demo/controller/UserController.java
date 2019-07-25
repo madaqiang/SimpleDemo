@@ -29,6 +29,7 @@ public class UserController {
         Map<String,Object> resultMap = new HashMap<String,Object>();
         resultMap.put("userList",userService.selectAll());
         System.out.println();
+        System.out.println();
         return resultMap;
     }
 
@@ -49,6 +50,7 @@ public class UserController {
             String certType = requestMap.get("certType")[0];
             System.out.println();
             System.out.println("certNum:"+certNum+",certType:"+certType);
+            System.out.println();
         }
         System.out.println("【请求方式为】"+requestMethod);
         return"Hello World!";
