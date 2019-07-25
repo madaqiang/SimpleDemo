@@ -28,7 +28,6 @@ public class UserController {
     public Map<String,Object> selectAll(){
         Map<String,Object> resultMap = new HashMap<String,Object>();
         resultMap.put("userList",userService.selectAll());
-        System.out.println("2312312");
         return resultMap;
     }
 
