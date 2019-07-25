@@ -13,11 +13,12 @@ public interface UserMapper {
     @Select("SELECT * FROM User WHERE id = #{id}")
     User selectUser(int id);
 
-    @Select("Select * from User")
+    @Select("Select * from user")
     List<User> selectAll();
 
     List<User> selectByName(String name);
 
     @Insert({"insert into user(name,age) values(#{name},#{age})"})
     public int insertUser(User user);
+        
 }
