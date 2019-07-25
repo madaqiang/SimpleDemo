@@ -13,10 +13,12 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.concurrent.ScheduledFuture;
 
 @Component
 public class ScheduleUtil {
 
+    private ScheduledFuture<?> future1;
     //@Scheduled(cron = "")
     public void timer(){
         //获取当前时间
@@ -26,12 +28,24 @@ public class ScheduleUtil {
 
     public String scheduleDemo(ThreadPoolTaskScheduler threadPoolTaskScheduler,String cronTime){
         System.out.println(threadPoolTaskScheduler);
-        threadPoolTaskScheduler.schedule(this::timer, new Trigger(){
+        future1 = threadPoolTaskScheduler.schedule(this::timer, new Trigger(){
             @Override
             public Date nextExecutionTime(TriggerContext triggerContext){
                 return new CronTrigger(cronTime).nextExecutionTime(triggerContext);
             }
         });
         return "****";
+    }
+
+    /***
+     * 取消
+     * @return
+     */
+    public String  stopCron1() {
+        if (future1 != null) {
+            future1.cancel(true);
+        }
+        System.out.println("DynamicTask.stopCron1()");
+        return "888";
     }
 }

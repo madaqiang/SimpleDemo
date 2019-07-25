@@ -40,7 +40,7 @@ public class TestUtil {
 //    public void run(String... args) throws Exception {
 //        System.out.println("自动执行成功CommandLineRunner=======》"+ args.toString());
 //    }
-    @Autowired
+    //@Autowired
     public void run() throws Exception {
 //        User user = new User("today",13);
 //       int result =  userService.insertUser(user);
