@@ -31,7 +31,6 @@ public class UserController {
         System.out.println();
         System.out.println();
         System.out.println();
-        System.out.println();
         return resultMap;
     }
 
