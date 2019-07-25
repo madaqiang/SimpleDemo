@@ -30,7 +30,6 @@ public class UserController {
         resultMap.put("userList",userService.selectAll());
         System.out.println();
         System.out.println();
-        System.out.println();
         return resultMap;
     }
 
